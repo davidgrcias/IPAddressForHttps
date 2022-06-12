@@ -27,7 +27,7 @@
       <tr>
         <td>Google Maps</td>
         <td>
-          <iframe src="" id = "gmaps" style = "width: 450px; height: 450px;">
+          <iframe src="" id = "gmaps" width="400" height="400">
           </iframe>
         </td>
       </tr>
@@ -36,9 +36,9 @@
     <script type="text/javascript">
       $.getJSON('https://ipapi.co/json/', function(data){
         $("#ip").text(data.ip);
+        $('#isp').text(data.org);
         $('#country').text(data.country_name);
         $('#city').text(data.region);
-        $('#isp').text(data.org);
         $("#gmaps").attr("src", "https://www.google.com/maps?q="+data.latitude+","+data.longitude+"&output=embed");
       })
     </script>
